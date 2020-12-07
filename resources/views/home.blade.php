@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+               <a href="/pkproject/public/posts/create" class="btn btn-primary">Create Post</a>
+               <h3>Your Blog Post</h3>
                 </div>
             </div>
         </div>
