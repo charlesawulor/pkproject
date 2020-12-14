@@ -116,12 +116,29 @@ class PostsController extends Controller
     {
         $this->validate($request,[
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'cover_image'=>'image|nullable|max:1999'
             ]);
+              
+             if($request->hasFile('cover_image')){
+                 //get file name with extensions
+                 $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
+                 //get just filename
+                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                 //GET THE EXTENSION
+                 $extension = $request->file('cover_image')->getClientOriginalExtension();
+                 //filename to store
+                 $fileNameToStore = $filename .'_'.time().'.'.$extension;
+                 //upload image
+                 $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+             }
       
              $post = Post::find($id);
              $post->title = $request->input('title');
              $post->body = $request->input('body');
+             if($request->hasFile('cover_image')){
+                 $post->cover_image = $fileNameToStore;
+             }
              $post->save();
       
              return redirect('/posts')->with('success', 'Post Updated');
