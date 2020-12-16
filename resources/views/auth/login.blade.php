@@ -63,6 +63,11 @@
                                     </a>
                                 @endif
                             </div>
+                        </div><br>
+                        <div class="form-row">
+                        <div class="col-md-6 offset-md-4">
+                        <a href="#" class="btn btn-secondary btn-black">Sign In with GitHub</a>
+                        </div>
                         </div>
                     </form>
                 </div>
