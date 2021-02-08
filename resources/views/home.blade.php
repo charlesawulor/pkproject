@@ -26,7 +26,7 @@
                       @foreach($posts as $post)
                       <tr>
                           <th>{{$post->title}}</th>
-                          <th><a href="/posts/{{$post->id}}/edit" class="btn btn-default">Edit</th>
+                          <th><a href="/pkproject/public/posts/{{$post->id}}/edit" class="btn btn-default">Edit</th>
                           <th></th>
                       </tr>
                       @endforeach
