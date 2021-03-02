@@ -130,7 +130,7 @@ class PostsController extends Controller
                  //filename to store
                  $fileNameToStore = $filename .'_'.time().'.'.$extension;
                  //upload image
-                 $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+                 $path = $request->file('cover_image')->storeAs('public/storage/cover_images', $fileNameToStore);
              }
       
              $post = Post::find($id);
@@ -158,7 +158,7 @@ class PostsController extends Controller
             return redirect('/posts')->with('error', 'Unauthorized page.');
         }
         if($post->cover_image != 'noimage.jpg'){
-            Storage::delete('public/cover_images/'.$post->cover_image);
+            Storage::delete('public/storage/cover_images/'.$post->cover_image);
         }
         $post->delete();
         return redirect('/posts')->with('success','Post has been deleted successfully');
