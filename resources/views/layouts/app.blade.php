@@ -34,7 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                                <a class="nav-link" href="/posts/create">Add post</a>
+                                <a class="nav-link" href="/pkproject/public/posts/create">Add post</a>
                             </li>
                     </ul>
 
