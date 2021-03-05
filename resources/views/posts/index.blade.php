@@ -10,7 +10,7 @@
 
         <div class="row">
                  <div class="col-md-4">
-         <img style="width:80%;height:150px" src="/pkproject/storage/app/public/cover_images/{{$post->cover_image}}" alt="">
+         <img style="width:80%;height:150px" src="/storage/app/public/cover_images/{{$post->cover_image}}" alt="">
                  </div>
                
                  <div class="col-md-8">                         
