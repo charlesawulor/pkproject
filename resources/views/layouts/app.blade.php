@@ -45,7 +45,7 @@
                                 <a class="nav-link" href="">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pkproject/public/posts/">Blog</a>
+                                <a class="nav-link" href="/public/posts/">Blog</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about">About</a>
