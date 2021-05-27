@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,52 +9,46 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::get('/', function () {
-    return view('welcome');
-   
-});
-*/
-
-Route::get('/', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
-/*
-Route::get('/hello', function () {
- 
-    return '<h1>Hello world</h1>';
+    return view('storehome');
 });
 
-Route::get('/about', function () {
-    return view('pages.about');
+Route::get('/storehome', 'HomeController@index')->name('storehome');
+
+Route::resource('shop','shopController');
+
+Route::resource('product-details','shopController');
+
+Route::get('/cart', 'CartController@index')->name('cart');
+
+Route::post('/cart', 'CartController@store')->name('cart');
+
+
+Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
+
+
+
+Route::get('empty', function(){
+
+Cart::destroy();
+
 });
-*/
-Route::get('/users/{id}', function ($id) {
-    
-    return 'This is user ' .$id;
-});
+
+Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+
+
+
+Route::delete('/saveForLater/{product}', 'SaveForLaterController@destroy')->name('saveForLater.destroy');
+Route::post('/saveForLater/switchToCart/{product}', 'SaveForLaterController@switchToCart')->name('saveForLater.switchToCart');
+
+
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+
+
+
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('posts','PostsController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('login/github', 'Auth\LoginController@redirectToProvider');
-Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
-
-Route::get('login/google', 'Auth\LoginController@redirectToProvider1');
-Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback1');
-
-
-
-

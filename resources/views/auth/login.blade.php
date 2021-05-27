@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
 <div class="container">
@@ -63,19 +63,7 @@
                                     </a>
                                 @endif
                             </div>
-                        </div><br>
-                        <div class="form-row">
-                        <div class="col-md-6 offset-md-4">
-                        <a href="login/github" class="btn btn-secondary btn-black">Sign In with GitHub</a>
                         </div>
-                        </div>
-                          <br>
-                        <div class="form-row">
-                        <div class="col-md-6 offset-md-4">
-                        <a href="login/google" class="btn btn-secondary btn-black" style="background-color:red">Sign In with Google</a>
-                        </div>
-                        </div>
-
                     </form>
                 </div>
             </div>
